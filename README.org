@@ -1,0 +1,56 @@
+* The Odin Project - Project 2: Knights Travails
+  Find more about [[https://www.theodinproject.com/courses/ruby-programming/lessons/data-structures-and-algorithms][The Odin Project]].
+** Brief Notes
+   - Implemented based on the answer of [[https://github.com/benjdelt/knights_travails/blob/master/main.rb][benjdelt]].
+   - Code improved with the help of [[https://codereview.stackexchange.com/users/46840/carcigenicate][Carcigenicate]]: [[https://codereview.stackexchange.com/questions/192701/solving-knights-travails-problem-without-using-vector-for-position?noredirect=1#comment370264_192701][Code Review - Stack Exchange]]
+   
+** Introduction
+   Solution to the Project 2: Knights Travails made in Clojure - Functional Programming
+   
+** How to Run
+   Download the project master to a folder, navigate to the folder and execute ~lein~.
+
+   #+BEGIN_SRC shell
+
+cd ./knights_travails-master
+lein run
+   
+   #+END_SRC
+   
+** How to use
+   Change the starting position of the knight in ~-main~ function.
+   ~find-path~ function needs two arguments:
+   - a starting-node;
+   - a goal-node.
+
+   Each node is represented in a number from 0 to 63 - the number of squares in a 
+   chess board. The first square (first top-left square) is represented with the
+   index 0. The last one, bottom-right square, is represented with the 63 index.
+   
+   Evaluate the ~-main~ to get the path to ~goal-node~.
+
+   #+BEGIN_SRC clojure
+
+(defn -main
+  "I don't do a whole lot ... yet."
+  [& args]
+  (draw-board (find-path 27 28)))
+
+   #+END_SRC
+
+   The output is printed to console, the moves are numbered from 1
+   (~starting node~) to n (~goal-node~) and looks like this:
+
+   #+BEGIN_SRC clojure
+
+knights-travails.core>
+[0 0 0 0 0 0 0 0]
+[0 0 0 0 2 0 0 0]
+[0 0 3 0 0 0 0 0]
+[0 0 0 1 4 0 0 0]
+[0 0 0 0 0 0 0 0]
+[0 0 0 0 0 0 0 0]
+[0 0 0 0 0 0 0 0]
+[0 0 0 0 0 0 0 0]
+
+   #+END_SRC
